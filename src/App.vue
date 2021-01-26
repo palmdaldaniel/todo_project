@@ -1,6 +1,7 @@
 <template>
   <div id="app">
     <navbar />
+    <addTodo />
 
     <router-view/>
   </div>
@@ -9,9 +10,12 @@
 <script>
 
 import Navbar from './components/navbar.vue'
+import addTodo from './components/addTodo.vue'
+
 export default {
   components: {
     Navbar,
+    addTodo
   
   }
   
