@@ -33,6 +33,7 @@ export default {
             this.title = null;
             this.description = null;
             this.date = null;
+            this.$store.commit('addTodoToList', todo)
         }
     }
 
