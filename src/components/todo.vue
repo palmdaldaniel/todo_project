@@ -2,12 +2,13 @@
 <div class="todo" @click="removeTodo">
 
    <h1> {{ todos.title }} </h1>
-    <p></p>
-    <div class="content">
+    <p class="made"> {{ todos.author}}</p>
+    <p class="made"> {{ todos.date }}  </p>
+    <p class="made"> {{ todos.time }}  </p>
     <h3> {{todos.descripion}} </h3>
-    <p> {{ todos.date }}  </p>
-    <p> {{ todos.time }}  </p>
-    </div>
+
+    <!-- <div class="content">
+    </div> -->
 
 </div>
    
@@ -31,6 +32,9 @@ export default {
 
 <style>
 
+.made {
+    font-size: 10px;
+}
 
 .todo {
  /*    border: 1px solid black; */
@@ -46,9 +50,6 @@ export default {
     cursor: pointer;
 }
 
-.content {
-    display: flex;
-    justify-content: space-between;
-}
+
 
 </style>

@@ -3,10 +3,11 @@
 <div class="addTodo">
     <h1>Add a new todo</h1>
     <form @submit.prevent="addTodo">
+        <input type="text" v-model="author" placeholder="Todo made by" required> <br>
         <label for="title"></label>
-        <input type="text" name="" v-model="title" id="title" required> <br>
+        <input type="text" name="" v-model="title" placeholder="Todo goes here" id="title" required> <br>
         <label for="description"></label>
-        <input type="text" name="" v-model="description" id="description" required> <br>
+        <input type="text" name="" v-model="description"  placeholder="Describe it pls ..." id="description" required> <br>
         <button> Add Todo </button>
     </form>
 </div>
@@ -17,6 +18,7 @@
 export default {
     data() {
         return {
+            author: null,
             title: null,
             date: null,
             description: null,
@@ -26,12 +28,14 @@ export default {
         addTodo(){
             let todo = {
                 title: this.title,
+                author: 'Todo made by: ' + this.author,
                 date: new Date().toLocaleDateString(),
                 time: new Date().toLocaleTimeString(),
                 descripion: this.description
             }
             console.log('submitting', todo)
             this.title = null;
+            this.author = null;
             this.description = null;
             this.date = null;
             this.$store.commit('addTodoToList', todo)
