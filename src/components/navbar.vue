@@ -23,6 +23,7 @@ export default {
 .navbar {
     padding: 50px;
     background: salmon;
+    margin-bottom: 2vh;
 }
 
 a {

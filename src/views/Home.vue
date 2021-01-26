@@ -1,7 +1,9 @@
 <template>
   <div class="home">
+    <div class="wrapper">
     <addTodo />
     <todos />
+    </div>
   </div>
 </template>
 
@@ -20,3 +22,12 @@ export default {
   }
 }
 </script>
+
+<style scoped>
+
+.home {
+  width: 50%;
+  margin: 0 auto;
+}
+
+</style>

@@ -26,7 +26,8 @@ export default {
         addTodo(){
             let todo = {
                 title: this.title,
-                date: new Date(),
+                date: new Date().toLocaleDateString(),
+                time: new Date().toLocaleTimeString(),
                 descripion: this.description
             }
             console.log('submitting', todo)
@@ -42,12 +43,10 @@ export default {
 
 <style scoped>
 
-h1 {
+h1, input, button {
     margin-bottom: 2vh ;
 }
 
-input {
-    margin-bottom: 2vh;
-}
+
 
 </style>
