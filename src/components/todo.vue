@@ -1,5 +1,5 @@
 <template>
-<div class="todo">
+<div class="todo" @click="removeTodo">
 
    <h1> {{ todos.title }} </h1>
     <p></p>
@@ -15,7 +15,15 @@
 <script>
 export default {
 
-    props: ['todos']
+    props: ['todos'],
+    methods: {
+        removeTodo(){
+            console.log('remove: ', this.todos)
+            this.$store.commit('removeTodoFromList',this.todos)
+
+            
+        }
+    }
 
 }
 </script>
