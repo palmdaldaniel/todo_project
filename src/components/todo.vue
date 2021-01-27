@@ -7,7 +7,7 @@
     <div class="content-container">
       <div class="info">
         <p>{{ todos.date + " - " + todos.time }}</p>
-        <h1>{{ todos.descripion }}</h1>
+        <p>{{ todos.descripion }}</p>
         <p>{{ todos.author }}</p>
       </div>
       <div class="action">
@@ -49,9 +49,6 @@ export default {
   margin-bottom: 2vh;
 }
 
-h1 {
-  color: #2f2f2f;
-}
 
 p {
   font-family: Open Sans;
@@ -65,12 +62,16 @@ p {
 
 .content-container {
   display: flex;
-  background:rgba(252, 230, 195, 0.692);
-  width: 20vw;
+  background:rgba(252, 230, 195, 0.468);
+  min-width: 300px; 
   height: 100px;
   justify-content: space-between;
   align-items: center;
   border-radius: 10px;
+}
+
+.content-container:hover{
+  background: rgb(252, 230, 195);
 }
 
 .action {
@@ -88,7 +89,7 @@ p {
 
 .action p {
   padding: 0.3em;
-  color: #141414;
+  color: #555;
 }
 
 .action p:hover, img:hover, button:hover {
@@ -101,15 +102,23 @@ p {
 }
 
 .info p {
+
   font-size: 10px;
+}
+
+.info p:nth-child(2) {
+  font-size: 1rem;
+  font-weight: bold;
+ 
 }
 
 button {
   border: none;
   border-radius: 5px;
-  background: black;
+  background: rgb(0, 0, 0);
   color: #ffffff;
   padding: 0.3em;
   font-size: 14px;
 }
+
 </style>

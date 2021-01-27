@@ -32,11 +32,11 @@ a {
     text-decoration: none;
     color: white;
     transition: 0.2s;
-    margin-right: 2vw;
+    margin: 2vw;
 }
 
 a:hover {
-    color: green;
+    color: #555;
    
 }
 

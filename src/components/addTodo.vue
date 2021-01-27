@@ -3,9 +3,10 @@
 <div class="addTodo">
     <h1>Add a new todo</h1>
     <form @submit.prevent="">
-        <input type="text" v-model="author" placeholder="Todo made by" required> <br>
+        <label for="author"></label>
+        <input type="text" id="author" v-model="author" placeholder="Todo made by" required> <br>
         <label for="description"></label>
-        <textarea name="" v-model="description"  placeholder="Describe it pls ..." id="description" required> </textarea><br>
+        <input name="" v-model="description"  placeholder="Describe it pls ..." id="description" required><br>
       <!--   <button @click="moveToHome"> Add Todo </button> -->
         <button @click="addTodo"><router-link to="/"> Add Todo </router-link></button> 
     </form>
@@ -18,8 +19,7 @@
 
 
 export default {
-  
-    
+
     data() {
         return {
             author: null,
@@ -71,7 +71,21 @@ a {
     color: white;
     text-decoration: none;
 }
+input{ 
+  border:0;
+  border-bottom:1px solid #555;  
+  background:transparent;
+  width:100%;
+  padding:8px 0 5px 0;
+  font-size:16px;
+  color:rgb(23, 23, 23);
+  }
 
+input:focus{ 
+ border:none;	
+ outline:none;
+ border-bottom:1px solid #fefefe;
+ }
 
 
 </style>
