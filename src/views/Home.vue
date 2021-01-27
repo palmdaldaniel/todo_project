@@ -1,14 +1,14 @@
 <template>
   <div class="home">
     <div class="wrapper">
-    <addTodo />
+   
     <todos />
     </div>
   </div>
 </template>
 
 <script>
-import addTodo from '../components/addTodo.vue'
+
 import todos from '../components/todos.vue'
 
 // @ is an alias to /src
@@ -16,7 +16,6 @@ import todos from '../components/todos.vue'
 
 export default {
   components: {
-    addTodo,
     todos
     
   }
