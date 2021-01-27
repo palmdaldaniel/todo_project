@@ -5,20 +5,24 @@ Vue.use(Vuex)
 
 export default new Vuex.Store({
   state: {
-    todoList: [ {title: 'New Todo 1',
-                  descripion: 'Love vuex',
-                  date: '2020.01.26'},
-                  {title: 'New Todo 2',
-                  descripion: 'VG here we go',
-                  date: '2020.01.26'},
-                  {title: 'New Todo 3',
-                  descripion: 'Jag hoppas du flyttar upp nu',
-                  date: '2020.01.26'},
-                  {title: 'New Todo 4',
-                  descripion: 'Love vuex',
-                  date: '2020.01.26'},
-      
-    ],
+    todoList: [ {time: new Date().toLocaleTimeString(),
+                  descripion: `Don't forget to eat`,
+                  date: new Date().toLocaleDateString(),
+                  author: 'Added by: ' + 'Daniel',},
+                  {time: new Date().toLocaleTimeString(),
+                    descripion: `Make my roomates laugh`,
+                    date: new Date().toLocaleDateString(),
+                    author: 'Added by: ' + 'Alex',},
+                    {time: new Date().toLocaleTimeString(),
+                      descripion: `Go surf`,
+                      date: new Date().toLocaleDateString(),
+                      author: 'Added by: ' + 'Coco',},
+                      {time: new Date().toLocaleTimeString(),
+                        descripion: `Go to sleep`,
+                        date: new Date().toLocaleDateString(),
+                        author: 'Added by: ' + 'Sofia',},
+          ],
+    doneTodos: []
   },
   mutations: {
     addTodoToList(state, todo) {
@@ -47,7 +51,7 @@ export default new Vuex.Store({
       let indexOfTodo = state.todoList.indexOf(todo)
       state.todoList.splice(indexOfTodo, 1)
       state.todoList.splice(indexOfTodo +1, 0, todo)
-    },
+    }
   },
   actions: {
   },

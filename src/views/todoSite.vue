@@ -20,4 +20,14 @@ export default {
 
 <style>
 
+
+.todoSite{
+  width: 70%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+}
+
+
+
 </style>

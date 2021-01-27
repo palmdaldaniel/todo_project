@@ -59,6 +59,19 @@ textarea {
     resize: none;
 }
 
+button {
+  border: none;
+  border-radius: 5px;
+  background: black;
+  color: #ffffff;
+  padding: 0.3em;
+  font-size: 14px;
+}
+a {
+    color: white;
+    text-decoration: none;
+}
+
 
 
 </style>

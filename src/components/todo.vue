@@ -22,13 +22,7 @@
 <script>
 export default {
   props: ["todos"],
-  data() {
-    return {
-      styles: {
-        "background-color": "blue",
-      },
-    };
-  },
+
   methods: {
     removeTodo() {
       //console.log("remove: ", this.todos);
@@ -55,26 +49,28 @@ export default {
   margin-bottom: 2vh;
 }
 
-h1, p {
-    color: #333333;
+h1 {
+  color: #2f2f2f;
 }
 
-
+p {
+  font-family: Open Sans;
+  color: rgb(20, 20, 20);
+}
 
 .up-and-down,
 .done {
   width: 30px;
-  
 }
 
 .content-container {
   display: flex;
-  background: rgba(255, 255, 255, 0.242);
+  background:rgba(252, 230, 195, 0.692);
   width: 20vw;
   height: 100px;
   justify-content: space-between;
   align-items: center;
-   border-radius: 10px;
+  border-radius: 10px;
 }
 
 .action {
@@ -90,13 +86,15 @@ h1, p {
   margin-bottom: 0.5em;
 }
 
-.action p{
-    padding: 0.3em;
+.action p {
+  padding: 0.3em;
+  color: #141414;
 }
 
-.action p:hover{
-    cursor: pointer;
+.action p:hover, img:hover, button:hover {
+  cursor: pointer;
 }
+
 
 .info {
   padding-left: 0.5em;
@@ -104,5 +102,14 @@ h1, p {
 
 .info p {
   font-size: 10px;
+}
+
+button {
+  border: none;
+  border-radius: 5px;
+  background: black;
+  color: #ffffff;
+  padding: 0.3em;
+  font-size: 14px;
 }
 </style>
