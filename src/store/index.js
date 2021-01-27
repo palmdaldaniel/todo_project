@@ -27,21 +27,26 @@ export default new Vuex.Store({
     removeTodoFromList(state, todo) {
       state.todoList = state.todoList.filter(t => t !== todo)
     },
+    todoDone(state, todo){
+      console.log('Todo is sooo done', state, todo)
+      let indexOfTodo = state.todoList.indexOf(todo)
+      state.todoList.push(...state.todoList.splice(indexOfTodo, 1))
+    },
     moveUpTheList(state, todo) {
-      console.log('this todo is so done', todo)
+      console.log('this todo is sooo important', todo)
       let indexOfTodo = state.todoList.indexOf(todo)
       if(indexOfTodo === 0){
         return
       } else {
-        state.todoList.splice(indexOfTodo,1)
-        state.todoList.splice(indexOfTodo-1, 0, todo)
+        state.todoList.splice(indexOfTodo, 1)
+        state.todoList.splice(indexOfTodo -1, 0, todo)
       }
     },
     moveDownTheList(state, todo) {
       console.log('this todo is so done', todo)
       let indexOfTodo = state.todoList.indexOf(todo)
-      state.todoList.splice(indexOfTodo,1)
-      state.todoList.splice(indexOfTodo+1, 0, todo)
+      state.todoList.splice(indexOfTodo, 1)
+      state.todoList.splice(indexOfTodo +1, 0, todo)
     },
   },
   actions: {

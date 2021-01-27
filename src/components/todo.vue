@@ -6,7 +6,8 @@
       <h3>{{ todos.descripion }}</h3>
     </div>
     <button v-on:click="moveUp"> Move up the list</button>
-    <button v-on:click="moveDown"> Move Down the list</button>
+    <button v-on:click="moveDown"> Move Down the list</button> <br>
+    <button v-on:click="todoIsDone" style="padding: 2px 10px"> X </button>
   </div>
 </template>
 
@@ -22,16 +23,13 @@ export default {
   },
   methods: {
     removeTodo() {
-      console.log("remove: ", this.todos);
+      //console.log("remove: ", this.todos);
       this.$store.commit("removeTodoFromList", this.todos);
     },
+    todoIsDone(){
+        this.$store.commit('todoDone', this.todos)
+    },
     moveUp() {
-      /* if (this.styles['background-color'] == "blue") {
-        this.styles['background-color'] = "red";
-      } else {
-        this.styles['background-color'] = "blue";
-      }
-       */
       this.$store.commit('moveUpTheList', this.todos)
     },
     moveDown(){
