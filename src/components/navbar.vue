@@ -22,14 +22,15 @@ export default {
 
 
 .navbar {
+    display: flex;
+    justify-content: center;
     padding: 50px;
-    background: salmon;
     margin-bottom: 2vh;
 }
 
 a {
     text-decoration: none;
-    color: black;
+    color: white;
     transition: 0.2s;
     margin-right: 2vw;
 }
