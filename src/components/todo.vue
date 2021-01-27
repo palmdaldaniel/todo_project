@@ -1,20 +1,43 @@
 <template>
-  <div class="todo" @click="removeTodo">
-    <p class="made">{{ todos.date + ' - '+ todos.time }}</p>
-    <p class="made">{{ todos.author }}</p>
-    <h3>{{ todos.descripion }}</h3>
-
+  <div class="todo-card">
+    <div class="todo" @click="removeTodo">
+      <p class="made">{{ todos.date + " - " + todos.time }}</p>
+      <p class="made">{{ todos.author }}</p>
+      <h3>{{ todos.descripion }}</h3>
+    </div>
+    <button v-on:click="moveUp"> Move up the list</button>
+    <button v-on:click="moveDown"> Move Down the list</button>
   </div>
 </template>
 
 <script>
 export default {
   props: ["todos"],
+  data() {
+    return {
+      styles: {
+        "background-color": "blue",
+      },
+    };
+  },
   methods: {
     removeTodo() {
       console.log("remove: ", this.todos);
       this.$store.commit("removeTodoFromList", this.todos);
     },
+    moveUp() {
+      /* if (this.styles['background-color'] == "blue") {
+        this.styles['background-color'] = "red";
+      } else {
+        this.styles['background-color'] = "blue";
+      }
+       */
+      this.$store.commit('moveUpTheList', this.todos)
+    },
+    moveDown(){
+        this.$store.commit('moveDownTheList', this.todos)
+        
+    }
   },
 };
 </script>

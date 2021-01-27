@@ -9,10 +9,10 @@ export default new Vuex.Store({
                   descripion: 'Love vuex',
                   date: '2020.01.26'},
                   {title: 'New Todo 2',
-                  descripion: 'Love vuex',
+                  descripion: 'VG here we go',
                   date: '2020.01.26'},
                   {title: 'New Todo 3',
-                  descripion: 'Love vuex',
+                  descripion: 'Jag hoppas du flyttar upp nu',
                   date: '2020.01.26'},
                   {title: 'New Todo 4',
                   descripion: 'Love vuex',
@@ -26,7 +26,19 @@ export default new Vuex.Store({
     },
     removeTodoFromList(state, todo) {
       state.todoList = state.todoList.filter(t => t !== todo)
-    }
+    },
+    moveUpTheList(state, todo) {
+      console.log('this todo is so done', todo)
+      let indexOfTodo = state.todoList.indexOf(todo)
+      state.todoList.splice(indexOfTodo,1)
+      state.todoList.splice(indexOfTodo-1, 0, todo)
+    },
+    moveDownTheList(state, todo) {
+      console.log('this todo is so done', todo)
+      let indexOfTodo = state.todoList.indexOf(todo)
+      state.todoList.splice(indexOfTodo,1)
+      state.todoList.splice(indexOfTodo+1, 0, todo)
+    },
   },
   actions: {
   },
