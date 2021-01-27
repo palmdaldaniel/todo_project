@@ -3,7 +3,7 @@
 <div class="todoSite">
     <h1> Let there be todos ! </h1>
       <addTodo />
-</div>
+</div>  
   
 </template>
 

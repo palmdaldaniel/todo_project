@@ -2,20 +2,26 @@
 
 <div class="addTodo">
     <h1>Add a new todo</h1>
-    <form @submit.prevent="addTodo">
+    <form @submit.prevent="">
         <input type="text" v-model="author" placeholder="Todo made by" required> <br>
         <label for="title"></label>
         <input type="text" name="" v-model="title" placeholder="Todo goes here" id="title" required> <br>
         <label for="description"></label>
         <input type="text" name="" v-model="description"  placeholder="Describe it pls ..." id="description" required> <br>
-        <button> Add Todo </button>
+      <!--   <button @click="moveToHome"> Add Todo </button> -->
+        <button @click="addTodo"><router-link to="/"> Add Todo </router-link></button> 
     </form>
 </div>
+
   
 </template>
 
 <script>
+
+
 export default {
+  
+    
     data() {
         return {
             author: null,
@@ -40,6 +46,7 @@ export default {
             this.date = null;
             this.$store.commit('addTodoToList', todo)
         }
+    
     }
 
 }
