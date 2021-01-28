@@ -21,8 +21,8 @@
 
 <script>
 export default {
-  props: ["todos"],
-
+  props: ["todos"
+          ],
   methods: {
     removeTodo() {
       //console.log("remove: ", this.todos);

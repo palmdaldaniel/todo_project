@@ -2,6 +2,7 @@
 
 <div class="todoSite">
       <addTodo />
+
 </div>  
   
 </template>
@@ -10,9 +11,10 @@
 
 import addTodo from '../components/addTodo.vue'
 
+
 export default {
     components: {
-        addTodo
+        addTodo,
         }
 
 }

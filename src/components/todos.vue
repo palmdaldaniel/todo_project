@@ -1,7 +1,6 @@
 <template>
 
 <div class="todos">
-   
     <todo v-for="(todo, i) in todos"
             :key="i"
             :todos="todo" />
