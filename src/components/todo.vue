@@ -14,15 +14,28 @@
         <p class="remove" @click="removeTodo"><b>X</b></p>
         <button class="remove" v-on:click="todoIsDone">Done</button>
       </div>
+      <div class="update-wrapper" v-show="update">
+        <upDateTodo />
+      </div>
+      <button @click="upDateTodo">Update</button>
     </div>
   </div>
   <!-- todo-card ends -->
 </template>
 
 <script>
+import upDateTodo from "./updateTodo.vue";
+
 export default {
-  props: ["todos"
-          ],
+  components: {
+    upDateTodo,
+  },
+  props: ["todos"],
+  data() {
+    return {
+      update: false,
+    };
+  },
   methods: {
     removeTodo() {
       //console.log("remove: ", this.todos);
@@ -37,6 +50,14 @@ export default {
     moveDown() {
       this.$store.commit("moveDownTheList", this.todos);
     },
+    upDateTodo() {
+      if (this.update == false) {
+        this.update = true;
+      } else {
+        this.update = false;
+      }
+      console.log("click me");
+    },
   },
 };
 </script>
@@ -48,7 +69,6 @@ export default {
   align-items: center;
   margin-bottom: 2vh;
 }
-
 
 p {
   font-family: Open Sans;
@@ -62,15 +82,15 @@ p {
 
 .content-container {
   display: flex;
-  background:rgba(252, 230, 195, 0.468);
-  min-width: 300px; 
+  background: rgba(252, 230, 195, 0.468);
+  min-width: 300px;
   height: 100px;
   justify-content: space-between;
   align-items: center;
   border-radius: 10px;
 }
 
-.content-container:hover{
+.content-container:hover {
   background: rgb(252, 230, 195);
 }
 
@@ -92,24 +112,23 @@ p {
   color: #555;
 }
 
-.action p:hover, img:hover, button:hover {
+.action p:hover,
+img:hover,
+button:hover {
   cursor: pointer;
 }
-
 
 .info {
   padding-left: 0.5em;
 }
 
 .info p {
-
   font-size: 10px;
 }
 
 .info p:nth-child(2) {
   font-size: 1rem;
   font-weight: bold;
- 
 }
 
 button {
@@ -120,5 +139,4 @@ button {
   padding: 0.3em;
   font-size: 14px;
 }
-
 </style>

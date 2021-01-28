@@ -5,6 +5,8 @@
             :key="i"
             :todos="todo" />
 
+        
+
 </div>
   
 </template>
@@ -16,7 +18,7 @@ import todo from "./todo"
 export default {
 
     components: {
-        todo
+        todo,
     },
     computed: {
         todos(){
