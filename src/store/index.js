@@ -4,6 +4,7 @@ import Vuex from 'vuex'
 Vue.use(Vuex)
 
 export default new Vuex.Store({
+  
   state: {
     todoList: [ {time: new Date().toLocaleTimeString(),
                   descripion: `Don't forget to eat`,
@@ -22,7 +23,7 @@ export default new Vuex.Store({
                         date: new Date().toLocaleDateString(),
                         author: 'Added by: ' + 'Sofia',},
           ],
-    doneTodos: []
+    doneTodos: [],
   },
   mutations: {
     addTodoToList(state, todo) {
@@ -52,10 +53,22 @@ export default new Vuex.Store({
       let indexOfTodo = state.todoList.indexOf(todo)
       state.todoList.splice(indexOfTodo, 1)
       state.todoList.splice(indexOfTodo +1, 0, todo)
+    },
+    initialiseStore(state) {
+      if(localStorage.getItem('store')) {
+        this.replaceState( Object.assign(state, JSON.parse(localStorage.getItem('store'))) )
+        
+      }
+
     }
+    
   },
   actions: {
   },
   modules: {
-  }
+  }, 
+  
 })
+  
+
+

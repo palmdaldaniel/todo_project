@@ -24,6 +24,15 @@ export default {
     todos,
     doneTodos,
   },
+  created() {
+    this.$store.subscribe((mutation, state) => {
+  console.log(mutation)
+  console.log(state)
+  localStorage.setItem('store', JSON.stringify(state))
+
+
+})
+  }
 };
 </script>
 
