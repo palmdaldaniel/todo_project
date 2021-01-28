@@ -1,13 +1,14 @@
 <template>
 
 <div class="addTodo">
-    <h1>Add a new todo</h1>
+    <h1>Make new todo</h1>
+    <li v-show="validation"> add a little bit more</li>
     <form @submit.prevent="">
         <label for="author"></label>
         <input type="text" id="author" v-model="author" placeholder="Todo made by" required> <br>
         <label for="description"></label>
         <input name="" v-model="description" placeholder="Describe it pls ..." id="description" required><br>
-        <button @click="addTodo"><router-link to="/"> Add Todo </router-link></button> 
+        <button @click="addTodo">Add todo</button> 
     </form>
 </div>
 
@@ -25,11 +26,13 @@ export default {
             title: null,
             date: null,
             description: null,
+            validation: false
         }
     },
     methods: {
         addTodo(){
             if(this.author.length < 2 && this.description.length < 2 ) {
+                this.validation = true;
                 return
             } else {
                 let todo = {
@@ -44,10 +47,10 @@ export default {
                 this.description = null;
                 this.date = null;
                 this.$store.commit('addTodoToList', todo)
+                this.$router.push('/')
             }
             
         }
-    
     }
 
 }
@@ -62,22 +65,20 @@ h1, input, button {
     margin-bottom: 2vh ;
 }
 
-textarea {
-    resize: none;
-}
-
 button {
   border: none;
   border-radius: 5px;
-  background: black;
+  background: rgb(75, 75, 75);
   color: #ffffff;
-  padding: 0.3em;
-  font-size: 14px;
+  padding: 0.5em 2.5em;
+  font-size: 16px;
 }
-a {
-    color: white;
-    text-decoration: none;
+
+button:hover {
+    background: rgb(18, 18, 18);
+    cursor: pointer;
 }
+
 input{ 
   border:0;
   border-bottom:1px solid #555;  

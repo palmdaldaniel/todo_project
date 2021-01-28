@@ -54,13 +54,16 @@ p {
 .info {
   padding-left: 0.5em;
 }
-
 .info p {
   font-size: 10px;
 }
 .info p:nth-child(2) {
   font-size: 1rem;
   font-weight: bold;
+}
+.remove {
+  text-decoration: none;
+
 }
 
 </style>

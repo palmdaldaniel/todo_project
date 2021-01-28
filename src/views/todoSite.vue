@@ -11,7 +11,6 @@
 
 import addTodo from '../components/addTodo.vue'
 
-
 export default {
     components: {
         addTodo,
