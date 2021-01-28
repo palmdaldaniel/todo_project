@@ -5,6 +5,7 @@
         <p>{{ doneTodo.date + " - " + doneTodo.time }}</p>
         <p>{{ doneTodo.descripion }}</p>
         <p>{{ doneTodo.author }}</p>
+        <p class="remove" @click="removeTodo"><b>X</b></p>
       </div>
     </div>
   </div>
@@ -13,6 +14,12 @@
 <script>
 export default {
   props: ["doneTodo"],
+  methods: {
+    removeTodo() {
+      console.log('Hello remove me')
+      this.$store.commit("removeTodoFromList", this.doneTodo);
+    }
+  }
 };
 </script>
 
@@ -44,13 +51,6 @@ p {
   background: rgb(252, 230, 195);
 }
 
-
-
-.action p {
-  padding: 0.3em;
-  color: #555;
-}
-
 .info {
   padding-left: 0.5em;
 }
@@ -58,7 +58,6 @@ p {
 .info p {
   font-size: 10px;
 }
-
 .info p:nth-child(2) {
   font-size: 1rem;
   font-weight: bold;

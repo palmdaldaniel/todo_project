@@ -30,6 +30,7 @@ export default new Vuex.Store({
     },
     removeTodoFromList(state, todo) {
       state.todoList = state.todoList.filter(t => t !== todo)
+      state.doneTodos = state.doneTodos.filter(t => t !== todo)
     },
     todoDone(state, todo){
       console.log('Todo is sooo done', state, todo)
