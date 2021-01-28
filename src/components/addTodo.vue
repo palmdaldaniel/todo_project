@@ -68,7 +68,7 @@ h1, input, button {
 button {
   border: none;
   border-radius: 5px;
-  background: rgb(75, 75, 75);
+  background: rgb(28, 28, 28);
   color: #ffffff;
   padding: 0.5em 2.5em;
   font-size: 16px;

@@ -5,8 +5,8 @@
         <p>{{ doneTodo.date + " - " + doneTodo.time }}</p>
         <p>{{ doneTodo.descripion }}</p>
         <p>{{ doneTodo.author }}</p>
-        <p class="remove" @click="removeTodo"><b>X</b></p>
       </div>
+      <p class="remove" @click="removeTodo"><b>X</b></p>
     </div>
   </div>
 </template>
@@ -25,7 +25,6 @@ export default {
 
 <style scoped>
 .done-todo-card {
-  text-decoration: line-through;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -58,12 +57,18 @@ p {
   font-size: 10px;
 }
 .info p:nth-child(2) {
+  text-decoration: line-through;
   font-size: 1rem;
   font-weight: bold;
 }
 .remove {
   text-decoration: none;
+  align-self: flex-start;
+  margin: 0.5vw 1vw;
+}
 
+.remove:hover {
+  cursor: pointer;
 }
 
 </style>
