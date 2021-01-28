@@ -6,8 +6,7 @@
         <label for="author"></label>
         <input type="text" id="author" v-model="author" placeholder="Todo made by" required> <br>
         <label for="description"></label>
-        <input name="" v-model="description"  placeholder="Describe it pls ..." id="description" required><br>
-      <!--   <button @click="moveToHome"> Add Todo </button> -->
+        <input name="" v-model="description" placeholder="Describe it pls ..." id="description" required><br>
         <button @click="addTodo"><router-link to="/"> Add Todo </router-link></button> 
     </form>
 </div>
@@ -30,18 +29,23 @@ export default {
     },
     methods: {
         addTodo(){
-            let todo = {
-                author: 'Added by: ' + this.author,
-                date: new Date().toLocaleDateString(),
-                time: new Date().toLocaleTimeString(),
-                descripion: this.description
+            if(this.author.length < 2 && this.description.length < 2 ) {
+                return
+            } else {
+                let todo = {
+                    author: 'Added by: ' + this.author,
+                    date: new Date().toLocaleDateString(),
+                    time: new Date().toLocaleTimeString(),
+                    descripion: this.description
+                }
+                console.log('submitting', todo)
+                this.title = null;
+                this.author = null;
+                this.description = null;
+                this.date = null;
+                this.$store.commit('addTodoToList', todo)
             }
-            console.log('submitting', todo)
-            this.title = null;
-            this.author = null;
-            this.description = null;
-            this.date = null;
-            this.$store.commit('addTodoToList', todo)
+            
         }
     
     }
@@ -50,6 +54,9 @@ export default {
 </script>
 
 <style scoped>
+h1 {
+    color: rgb(249, 249, 249);
+}
 
 h1, input, button {
     margin-bottom: 2vh ;

@@ -34,7 +34,6 @@ export default new Vuex.Store({
     todoDone(state, todo){
       console.log('Todo is sooo done', state, todo)
       let indexOfTodo = state.todoList.indexOf(todo)
-      //state.todoList.push(...state.todoList.splice(indexOfTodo, 1))
       state.doneTodos.unshift(...state.todoList.splice(indexOfTodo, 1))
     },
     moveUpTheList(state, todo) {

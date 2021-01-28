@@ -4,7 +4,7 @@
 
     <router-link to="/">Home</router-link>
     <!-- Here goes the form later on -->
-    <router-link to="/todoSite">Todo</router-link>
+    <router-link to="/todoSite">Add Things Todo</router-link>
     <router-link to="/about">About</router-link>
 
 

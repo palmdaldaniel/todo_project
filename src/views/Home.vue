@@ -2,11 +2,11 @@
   <div class="home">
     <div class="wrapper">
       <div class="todos">
-        <h1>My Todos</h1>
+        <h1>Things todo</h1>
         <todos />
       </div>
       <div class="done-todos">
-      <h1> Todos completed </h1>
+      <h1> Completed todos </h1>
         <doneTodos />
       </div>
     </div>
@@ -42,7 +42,9 @@ h1 {
 
 .wrapper {
   display: flex;
+
   flex-direction: column;
+/*   max-width: 800px; */
 
 }
 
