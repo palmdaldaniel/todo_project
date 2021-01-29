@@ -59,8 +59,10 @@ export default new Vuex.Store({
         this.replaceState( Object.assign(state, JSON.parse(localStorage.getItem('store'))) )
         
       }
-
-    }
+    },
+   /*  updateTodo(state, todo) {
+      console.log('hello')
+    } */
     
   },
   actions: {

@@ -29,6 +29,7 @@ export default {
   justify-content: center;
   align-items: center;
   margin-bottom: 2vh;
+
 }
 
 p {
@@ -39,7 +40,7 @@ p {
 .content-container {
   display: flex;
   background: rgba(252, 230, 195, 0.468);
-  min-width: 300px;
+  min-width: 280px;
   height: 100px;
   justify-content: space-between;
   align-items: center;

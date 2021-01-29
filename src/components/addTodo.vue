@@ -37,7 +37,7 @@ export default {
                 let todo = {
                     author: 'Added by: ' + this.author,
                     date: new Date().toLocaleDateString(),
-                    time: new Date().toLocaleTimeString(),
+                    time: new Date().toLocaleTimeString().slice(0,5),
                     descripion: this.description
                 }
                 console.log('submitting', todo)

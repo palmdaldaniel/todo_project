@@ -1,11 +1,22 @@
 <template>
   <div class="todo-card">
+     <div v-show="update" class="update">
+        <div class="update-info">
+          <p @click="edit"><b>X</b></p>
+          <p>Edit and press save</p>
+          <input type="text" ref="input" /> <br />
+          <button @click="updating">Save</button>
+        </div>
+      </div>
     <div class="up-and-down">
       <img src="../assets/up.svg" alt="" v-on:click="moveUp" />
       <img src="../assets/down.svg" alt="" v-on:click="moveDown" />
     </div>
     <div class="content-container">
       <div class="info">
+        <div class="img-cont">
+          <img @click="edit" src="../assets/edit-solid.svg" alt="" />
+        </div>
         <p>{{ todos.date + " - " + todos.time }}</p>
         <p>{{ todos.descripion }}</p>
         <p>{{ todos.author }}</p>
@@ -14,25 +25,18 @@
         <p class="remove" @click="removeTodo"><b>X</b></p>
         <button class="remove" v-on:click="todoIsDone">Done</button>
       </div>
-      <div v-show="update" class="update">
-      <input type="text" ref="input">
-      <button @click="updating"> Save </button>
-      </div>
-      <button @click="updateMe"> Update me </button>
     </div>
   </div>
   <!-- todo-card ends -->
 </template>
 
 <script>
-
 export default {
   props: ["todos"],
   data() {
     return {
-      update: false
-
-    }
+      update: false,
+    };
   },
   methods: {
     removeTodo() {
@@ -48,20 +52,22 @@ export default {
     moveDown() {
       this.$store.commit("moveDownTheList", this.todos);
     },
-    updateMe() {
-      this.update = true
+    edit() {
+      if(this.update == false) {
+        this.update = true;
+      } else {
+        this.update = false
+      }
     },
-    updating(){
-      console.log(this.todos.descripion)
-      console.log(this.$refs.input.value)
-      this.todos.descripion = this.$refs.input.value
-      console.log(this.todos.descripion)
-      this.update = false
+    updating() {
+      if(this.$refs.input.value.length < 2){
+        this.update = false;
+      } else {
+        this.todos.descripion = this.$refs.input.value;
+        this.update = false;
+      }
 
-      
-      /* this.todos.description = this.$refs.input
-      console.log(this.$refs.input.value) */
-    }
+    },
   },
 };
 </script>
@@ -87,7 +93,7 @@ p {
 .content-container {
   display: flex;
   background: rgba(252, 230, 195, 0.468);
-  min-width: 300px;
+  min-width: 280px;
   height: 100px;
   justify-content: space-between;
   align-items: center;
@@ -112,7 +118,7 @@ p {
 }
 
 .action p {
-  padding: 0.3em;
+  padding: 0.5em 0.2em;
   color: #555;
 }
 
@@ -130,7 +136,7 @@ button:hover {
   font-size: 10px;
 }
 
-.info p:nth-child(2) {
+.info p:nth-child(3) {
   font-size: 1rem;
   font-weight: bold;
 }
@@ -142,5 +148,30 @@ button {
   color: #ffffff;
   padding: 0.3em;
   font-size: 14px;
+}
+
+.img-cont {
+  width: 20px;
+}
+
+.update {
+  position: absolute;
+  border-radius: 10px;
+  background: rgb(255, 255, 255);
+  height: 200px;
+  width: 350px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.update-info b {
+  position: absolute;
+  top: 10px;
+  left: 320px;
+}
+
+.update-info b:hover {
+  cursor: pointer;
 }
 </style>
