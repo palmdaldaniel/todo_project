@@ -14,27 +14,25 @@
         <p class="remove" @click="removeTodo"><b>X</b></p>
         <button class="remove" v-on:click="todoIsDone">Done</button>
       </div>
-      <div class="update-wrapper" v-show="update">
-        <upDateTodo />
+      <div v-show="update" class="update">
+      <input type="text" ref="input">
+      <button @click="updating"> Save </button>
       </div>
-      <button @click="upDateTodo">Update</button>
+      <button @click="updateMe"> Update me </button>
     </div>
   </div>
   <!-- todo-card ends -->
 </template>
 
 <script>
-import upDateTodo from "./updateTodo.vue";
 
 export default {
-  components: {
-    upDateTodo,
-  },
   props: ["todos"],
   data() {
     return {
-      update: false,
-    };
+      update: false
+
+    }
   },
   methods: {
     removeTodo() {
@@ -50,14 +48,20 @@ export default {
     moveDown() {
       this.$store.commit("moveDownTheList", this.todos);
     },
-    upDateTodo() {
-      if (this.update == false) {
-        this.update = true;
-      } else {
-        this.update = false;
-      }
-      console.log("click me");
+    updateMe() {
+      this.update = true
     },
+    updating(){
+      console.log(this.todos.descripion)
+      console.log(this.$refs.input.value)
+      this.todos.descripion = this.$refs.input.value
+      console.log(this.todos.descripion)
+      this.update = false
+
+      
+      /* this.todos.description = this.$refs.input
+      console.log(this.$refs.input.value) */
+    }
   },
 };
 </script>

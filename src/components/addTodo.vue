@@ -23,7 +23,6 @@ export default {
     data() {
         return {
             author: null,
-            title: null,
             date: null,
             description: null,
             validation: false
@@ -31,7 +30,7 @@ export default {
     },
     methods: {
         addTodo(){
-            if(this.author.length < 2 && this.description.length < 2 ) {
+            if(this.author.length < 2 || this.description.length < 2 ) {
                 this.validation = true;
                 return
             } else {
@@ -48,11 +47,9 @@ export default {
                 this.date = null;
                 this.$store.commit('addTodoToList', todo)
                 this.$router.push('/')
-            }
-            
+            }  
         }
     }
-
 }
 </script>
 
