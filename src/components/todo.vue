@@ -4,7 +4,7 @@
         <div class="update-info">
           <p @click="edit"><b>X</b></p>
           <p>Edit and press save</p>
-          <form submit.prevent="" >
+          <form @submit.prevent="updating" >
           <input type="text" ref="input" /> <br />
           <button @click="updating">Save</button>
           </form>
