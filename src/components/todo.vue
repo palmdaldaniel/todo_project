@@ -57,7 +57,7 @@ export default {
       if(this.update == false) {
         this.update = true;
       } else {
-        this.update = false
+        this.update = false;
       }
     },
     updating() {
@@ -65,6 +65,7 @@ export default {
         this.update = false;
       } else {
         this.todos.descripion = this.$refs.input.value;
+        this.$refs.input.value = null;
         this.update = false;
       }
 
