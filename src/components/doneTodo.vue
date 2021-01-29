@@ -16,10 +16,9 @@ export default {
   props: ["doneTodo"],
   methods: {
     removeTodo() {
-      console.log('Hello remove me')
       this.$store.commit("removeTodoFromList", this.doneTodo);
-    }
-  }
+    },
+  },
 };
 </script>
 
@@ -29,7 +28,6 @@ export default {
   justify-content: center;
   align-items: center;
   margin-bottom: 2vh;
-
 }
 
 p {
@@ -71,5 +69,4 @@ p {
 .remove:hover {
   cursor: pointer;
 }
-
 </style>

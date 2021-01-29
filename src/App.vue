@@ -32,7 +32,7 @@ export default {
 body {
   background: url('https://images.unsplash.com/photo-1516074269859-f54ee0d65fa7?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1567&q=80');
   background-size: cover;
-  min-height:  100vh;  /* vh = procent av skärmstorleken */
+  min-height:  100vh; 
 }
 
 

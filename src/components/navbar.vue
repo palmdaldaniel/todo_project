@@ -1,43 +1,31 @@
 <template>
-
-<div class="navbar">
-
+  <div class="navbar">
     <router-link to="/">Home</router-link>
-    <!-- Here goes the form later on -->
-    <router-link to="/todoSite">Add Things Todo</router-link>
+    <router-link to="/todoSite">Create todo</router-link>
     <router-link to="/about">About</router-link>
-
-
-</div>
-  
+  </div>
 </template>
 
 <script>
-export default {
-
-}
+export default {};
 </script>
 
 <style scoped>
-
-
 .navbar {
-    display: flex;
-    justify-content: center;
-    padding: 50px;
-    margin-bottom: 2vh;
+  display: flex;
+  justify-content: center;
+  padding: 50px;
+  margin-bottom: 2vh;
 }
 
 a {
-    text-decoration: none;
-    color: white;
-    transition: 0.2s;
-    margin: 2vw;
+  text-decoration: none;
+  color: white;
+  transition: 0.2s;
+  margin: 2vw;
 }
 
 a:hover {
-    color: #555;
-   
+  color: #555;
 }
-
 </style>

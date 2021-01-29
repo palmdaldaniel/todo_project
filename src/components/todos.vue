@@ -4,9 +4,6 @@
     <todo v-for="(todo, i) in todos"
             :key="i"
             :todos="todo" />
-
-        
-
 </div>
   
 </template>

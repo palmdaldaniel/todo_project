@@ -40,7 +40,6 @@ export default {
   },
   methods: {
     removeTodo() {
-      //console.log("remove: ", this.todos);
       this.$store.commit("removeTodoFromList", this.todos);
     },
     todoIsDone() {
