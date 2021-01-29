@@ -1,4 +1,17 @@
 # todo_project
+A todolist-app made with Vuex
+Explored state management, mutations, compononents, props,
+eventhandlers, conditionals, Object.create, computed properties,
+router-links among other things
+
+Features include: 
+ - Add todo
+ - Remove todo 
+ - Update todo
+ - Prioritize todo
+ - Local storage
+
+
 
 ## Project setup
 ```
