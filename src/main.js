@@ -8,6 +8,7 @@ Vue.config.productionTip = false
 new Vue({
   router,
   store,
+  // initialize local storage when app is being created
   beforeCreate() {
 		this.$store.commit('initialiseStore');
 	},
