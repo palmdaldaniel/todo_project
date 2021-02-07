@@ -1,5 +1,7 @@
 # todo_project
-A todolist-app made with Vuex
+A todo - app made with Vuex
+
+# URl - http://todo.dpfed20.se/
 
 Explored state management, mutations, compononents, props,
 eventhandlers, conditionals, Object.create, computed properties,
