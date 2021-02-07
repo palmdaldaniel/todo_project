@@ -9,7 +9,7 @@ and redirecting with router.
 
 Features include: 
  - Add todo
- - set todo as done
+ - Set todo as done
  - Remove todo 
  - Update todo
  - Prioritize todo
